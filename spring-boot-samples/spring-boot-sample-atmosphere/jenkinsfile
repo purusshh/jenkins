@@ -20,7 +20,7 @@ node {
      // junit '${WORKSPACE}/spring-boot-samples/spring-boot-sample-atmosphere/target/surefire-reports/*.xml'
     //   archive '"${WORKSPACE}"/spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
     //    sh 'chmod 755 "${WORKSPACE}"/spring-boot-samples/spring-boot-sample-atmosphere/target/surefire-reports/*'
-    //   junit '"${WORKSPACE}"/spring-boot-samples/spring-boot-sample-atmosphere/target/surefire-reports/TEST-*.xml'
+    junit 'spring-boot-samples/spring-boot-sample-atmosphere/target/surefire-reports/*.xml'
        
    }
 } 
