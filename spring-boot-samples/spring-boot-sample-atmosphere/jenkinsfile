@@ -53,6 +53,6 @@ node {
      nexusArtifactUploader artifacts: [[artifactId: 'spring-boot-samples', classifier: '', file: 'spring-boot-samples/spring-boot-sample-atmosphere/target/spring-boot-sample-atmosphere-1.4.0.BUILD-SNAPSHOT.jar', type: 'jar']], credentialsId: '615dfd14-4a8e-4a79-955a-52fa4a62f0d0', groupId: 'org.springframework.boot', nexusUrl: '10.250.64.113:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.4.0.BUILD-SNAPSHOT'
    }
    stage('Deploy'){
-   sh 'ssh 10.250.64.106 "ansible-playbook /root/ansible/deploy.yml"'
+   sh 'ssh 10.250.64.106 "ansible-playbook node2 /root/ansible/deploy.yml"'
    }
 } 
