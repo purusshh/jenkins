@@ -49,6 +49,6 @@ node {
         }
     }
   stage('Publish') {
-     nexusPublisher nexusInstanceId: '10.250.64.113', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar']], mavenCoordinate: [artifactId: 'spring-boot-sample-atmosphere', groupId: 'org.jenkins-ci.main', packaging: 'jar', version: '1.4.0.BUILD-SNAPSHOT']]]
+     nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar']], mavenCoordinate: [artifactId: 'spring-boot-sample-atmosphere', groupId: 'org.jenkins-ci.main', packaging: 'jar', version: '1.4.0.BUILD-SNAPSHOT']]]
    }
 } 
