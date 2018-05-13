@@ -33,7 +33,7 @@ node {
           '-Dsonar.login=admin ' +
           '-Dsonar.password=admin ' +
           '-Dsonar.language=java ' +
-          '-Dsonar.sources=. ' +
+          '-Dsonar.sources=. '
        }
    }   
 
