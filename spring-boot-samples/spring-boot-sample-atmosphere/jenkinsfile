@@ -39,15 +39,15 @@ node {
           '-Dsonar.exclusions=**/*Test*/**'
        }
    }   
-    stage("SonarQube Quality Gate") { 
-        sleep 20
-        timeout(time: 1, unit: 'HOURS') { 
-           def qg = waitForQualityGate() 
-           if (qg.status != 'OK') {
-             error "Pipeline aborted due to quality gate failure: ${qg.status}"
-           }
-        }
-    } 
+ //   stage("SonarQube Quality Gate") { 
+ //       sleep 20
+   //     timeout(time: 1, unit: 'HOURS') { 
+   //        def qg = waitForQualityGate() 
+   //        if (qg.status != 'OK') {
+   //          error "Pipeline aborted due to quality gate failure: ${qg.status}"
+  //         }
+   //     }
+  //  } 
   stage('Publish') {
      //nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'spring-boot-samples/spring-boot-sample-atmosphere/target/spring-boot-sample-atmosphere-*.jar']], mavenCoordinate: [artifactId: 'spring-boot-sample-atmosphere', groupId: 'org.jenkins-ci.main', packaging: 'jar', version: '1.4.0.BUILD-SNAPSHOT']]]
      nexusArtifactUploader artifacts: [[artifactId: 'spring-boot-samples', classifier: '', file: 'spring-boot-samples/spring-boot-sample-atmosphere/target/spring-boot-sample-atmosphere-1.4.0.BUILD-SNAPSHOT.jar', type: 'jar']], credentialsId: '615dfd14-4a8e-4a79-955a-52fa4a62f0d0', groupId: 'org.springframework.boot', nexusUrl: '10.250.64.113:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'snapshots', version: '1.4.0.BUILD-SNAPSHOT'
